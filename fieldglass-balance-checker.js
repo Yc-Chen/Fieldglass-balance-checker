@@ -1,7 +1,21 @@
-function setNewDate(date1, date2){
-//date1, date2 should be in format "DD/MM/YYYY"
-//date1 should be earlier than date2
-  document.getElementById('filterStartDate').value=date1;
-  document.getElementById('filterEndDate').value=date2;
-  document.getElementsByName('timeSheet_worker_list_search')[0].click()
+var today = new Date();
+dd_year_start = "01/01/"+today.getFullYear();
+function getToday(){
+  var dd = today.getDate();
+  var mm = today.getMonth()+1;
+  var yyyy = today.getFullYear();
+  var full_dd = dd+'/'+mm+'/'+yyyy;
+  return full_dd  
+}
+dd_today = getToday();
+
+document.getElementById('filterStartDate').value = dd_year_start;
+document.getElementById('filterEndDate').value = today;
+document.getElementsByName('timeSheet_worker_list_search')[0].click();
+
+var hh_count_atwork = 0;
+var dd_count_atwork = 0;
+var dd_count_nationalholiday = 0;
+
+function isNationalHolidayButNotWeekend(){
 }
